@@ -1,13 +1,13 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "xorg-xserver-xvfb" %}
+{% set version = "21.1.20" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  url: https://gitlab.freedesktop.org/xorg/xserver/-/archive/xorg-server-21.1.20/xserver-xorg-server-21.1.20.tar.gz?ref_type=tags
+  sha256: dac440fda99ffcaae48e51b4724013f930868ebbbf5c382b73bb36b411cdaa9c
 
 build:
   number: 0
@@ -22,23 +22,22 @@ requirements:
     - python
 
 test:
-  imports:
-    - {{ name.replace('-', '.') }}
   requires:
     - pip
   commands:
     - pip check
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://www.x.org/
+  summary: Virtual framebuffer X server
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+    Xvfb is an X server that can run on machines with no display hardware and no
+    physical input devices. It emulates a dumb framebuffer using virtual memory.
+  license: MIT
+  license_family: MIT
+  license_file: COPYING
+  dev_url: https://gitlab.freedesktop.org/xorg/xserver
+  doc_url: https://www.x.org/wiki/Documentation/
 
 extra:
   recipe-maintainers:
