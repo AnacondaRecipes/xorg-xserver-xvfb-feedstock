@@ -12,29 +12,21 @@ source:
 
 build:
   number: 0
-  noarch: python
 
 requirements:
   build:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - meson
-    - cmake
-    - xorg-xproto
     - xorg-xorgproto
     - xorg-xtrans
     - pixman
     - libxkbfile
   host:
-    - python
-    - pip
-    - xorg-xproto
     - xorg-xorgproto
     - xorg-xtrans
     - pixman
     - libxkbfile
-  run:
-    - python
 
 test:
   requires:
