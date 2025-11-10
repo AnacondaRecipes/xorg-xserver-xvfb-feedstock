@@ -6,18 +6,33 @@ package:
   version: {{ version }}
 
 source:
-  url: https://gitlab.freedesktop.org/xorg/xserver/-/archive/xorg-server-21.1.20/xserver-xorg-server-21.1.20.tar.gz?ref_type=tags
+  url: https://gitlab.freedesktop.org/xorg/xserver/-/archive/xorg-server-21.1.20/xserver-xorg-server-21.1.20.tar.gz
   sha256: dac440fda99ffcaae48e51b4724013f930868ebbbf5c382b73bb36b411cdaa9c
+  
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  noarch: python
 
 requirements:
+  build:
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
+    - meson
+    - cmake
+    - xorg-xproto
+    - xorg-xorgproto
+    - xorg-xtrans
+    - pixman
+    - libxkbfile
   host:
     - python
     - pip
+    - xorg-xproto
+    - xorg-xorgproto
+    - xorg-xtrans
+    - pixman
+    - libxkbfile
   run:
     - python
 
