@@ -29,6 +29,8 @@ requirements:
     - openssl
     - pixman
     - libxkbfile
+  run:
+    - xorg-libxfont2
 
 test:
   requires:
