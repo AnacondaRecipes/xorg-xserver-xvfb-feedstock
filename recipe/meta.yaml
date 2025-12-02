@@ -21,15 +21,15 @@ requirements:
     - ninja
     - pkg-config
   host:
-    - xorg-xorgproto
-    - xorg-xtrans
-    - xorg-libxfont2
-    - xorg-font-util
-    - xorg-libxau
-    - xorg-libxdmcp
-    - openssl
-    - pixman
-    - libxkbfile
+    - xorg-font-util 1.4.1
+    - xorg-libxfont2 2.0.6
+    - xorg-libxau 1.0.12
+    - xorg-libxdmcp 1.1.5
+    - xorg-xorgproto 2024.1
+    - xorg-xtrans 1.6.0
+    - openssl {{ openssl }}
+    - pixman 0.46.4
+    - libxkbfile 1.1.0
   run:
     - xorg-libxfont2
 
