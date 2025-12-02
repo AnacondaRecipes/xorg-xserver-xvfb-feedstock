@@ -18,6 +18,7 @@ requirements:
     - {{ compiler('c') }}
     - meson
     - ninja
+    - pkg-config
   host:
     - xorg-xorgproto
     - xorg-xtrans
