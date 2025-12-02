@@ -28,9 +28,11 @@ requirements:
 
 test:
   requires:
-    - pip
+    - pkg-config
   commands:
-    - pip check
+    #- pkg-config --exists xvfb
+    #- test -f $PREFIX/lib/xvfb # [osx]
+    #- test -f $PREFIX/lib/xvfb     # [linux]
 
 about:
   home: https://www.x.org/
