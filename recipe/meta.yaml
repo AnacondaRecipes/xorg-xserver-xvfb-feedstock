@@ -24,6 +24,8 @@ requirements:
     - xorg-xtrans
     - xorg-libxfont2
     - xorg-font-util
+    - xorg-libxau
+    - xorg-libxdmcp
     - openssl
     - pixman
     - libxkbfile
