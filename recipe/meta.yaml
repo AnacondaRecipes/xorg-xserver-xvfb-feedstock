@@ -31,8 +31,7 @@ test:
     - pkg-config
   commands:
     #- pkg-config --exists xvfb
-    #- test -f $PREFIX/lib/xvfb # [osx]
-    #- test -f $PREFIX/lib/xvfb     # [linux]
+    #- test -f $PREFIX/lib/xvfb
 
 about:
   home: https://www.x.org/
