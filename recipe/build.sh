@@ -1,6 +1,6 @@
 #!/bin/bash
 
-meson setup builddir --prefix="${PREFIX}" -Dglx=false -Dxquartz=false -Dsecure-rpc=false # --auto-features disabled
+meson setup builddir --prefix="${PREFIX}" --auto-features disabled -Dglx=false -Dxquartz=false -Dsecure-rpc=false # --auto-features disabled
 
 cd builddir
 
