@@ -21,6 +21,8 @@ requirements:
   host:
     - xorg-xorgproto
     - xorg-xtrans
+    - xorg-libxfont2
+    - xorg-font-util
     - pixman
     - libxkbfile
 
