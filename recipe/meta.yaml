@@ -34,11 +34,9 @@ requirements:
     - xorg-libxfont2
 
 test:
-  requires:
-    - pkg-config
   commands:
-    #- pkg-config --exists xvfb
-    #- test -f $PREFIX/lib/xvfb
+    - Xvfb -help
+    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins
 
 about:
   home: https://www.x.org/
