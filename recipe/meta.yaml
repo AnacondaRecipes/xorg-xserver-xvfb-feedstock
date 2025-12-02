@@ -17,10 +17,7 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - meson
-    - xorg-xorgproto
-    - xorg-xtrans
-    - pixman
-    - libxkbfile
+    - ninja
   host:
     - xorg-xorgproto
     - xorg-xtrans
