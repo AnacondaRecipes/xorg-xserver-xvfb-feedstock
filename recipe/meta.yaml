@@ -27,16 +27,19 @@ requirements:
     - xorg-libxdmcp 1.1.5
     - xorg-xorgproto 2024.1
     - xorg-xtrans 1.6.0
+    - xkeyboard-config 2.44
     - openssl {{ openssl }}
     - pixman 0.46.4
     - libxkbfile 1.1.0
   run:
     - xorg-libxfont2
+    - xkeyboard-config
+    - xkbcomp
 
 test:
   commands:
     - Xvfb -help
-    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins
+    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins & XVFB_PID=$! && sleep 2 && kill $XVFB_PID
 
 about:
   home: https://www.x.org/
