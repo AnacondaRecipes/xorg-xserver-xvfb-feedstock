@@ -1,45 +1,58 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "xorg-xserver-xvfb" %}
+{% set version = "21.1.21" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  url: https://gitlab.freedesktop.org/xorg/xserver/-/archive/xorg-server-{{ version }}/xserver-xorg-server-{{ version }}.tar.gz
+  sha256: 7b8b00f177bbf3506c7647d5349d6ffdea01b3eaf68197658574cb1e424bc54b
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  skip: true  # [win]
 
 requirements:
+  build:
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
+    - meson
+    - ninja-base
+    - pkg-config
   host:
-    - python
-    - pip
+    - xorg-font-util 1.4.1
+    - xorg-libxfont2 2.0.6
+    - xorg-libxau 1.0.12
+    - xorg-libxdmcp 1.1.5
+    - xorg-xorgproto 2024.1
+    - xorg-xtrans 1.6.0
+    - xkeyboard-config 2.44
+    - openssl {{ openssl }}
+    - pixman 0.46.4
+    - libxkbfile 1.1.0
   run:
-    - python
+    - xorg-libxfont2
+    - xkeyboard-config
+    - xkbcomp
 
 test:
-  imports:
-    - {{ name.replace('-', '.') }}
-  requires:
-    - pip
   commands:
-    - pip check
+    - Xvfb -help
+    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins & XVFB_PID=$! && sleep 2 && kill $XVFB_PID
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://www.x.org/
+  summary: Virtual framebuffer X server
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+    Xvfb is an X server that can run on machines with no display hardware and no
+    physical input devices. It emulates a dumb framebuffer using virtual memory.
+  license: MIT
+  license_family: MIT
+  license_file: COPYING
+  dev_url: https://gitlab.freedesktop.org/xorg/xserver
+  doc_url: https://www.x.org/wiki/Documentation/
 
 extra:
   recipe-maintainers:
-    - Jrice1317
+    - ViridianMelody
