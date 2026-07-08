@@ -1,5 +1,5 @@
 {% set name = "xorg-xserver-xvfb" %}
-{% set version = "21.1.21" %}
+{% set version = "21.1.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.freedesktop.org/xorg/xserver/-/archive/xorg-server-{{ version }}/xserver-xorg-server-{{ version }}.tar.gz
-  sha256: 7b8b00f177bbf3506c7647d5349d6ffdea01b3eaf68197658574cb1e424bc54b
+  sha256: 5051b8a339b9497cb573b57871fa7311a2d55c39c3d1cecd051804bbfe9c18e2
 
 build:
   number: 0
