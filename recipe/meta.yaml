@@ -2,7 +2,7 @@
 {% set version = "21.1.24" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -10,7 +10,7 @@ source:
   sha256: 5051b8a339b9497cb573b57871fa7311a2d55c39c3d1cecd051804bbfe9c18e2
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -56,3 +56,5 @@ about:
 extra:
   recipe-maintainers:
     - ViridianMelody
+  skip-lints:
+    - python_build_tools_in_host
