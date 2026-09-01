@@ -22,15 +22,15 @@ requirements:
     - pkg-config
   host:
     - xorg-font-util 1.4.1
-    - xorg-libxfont2 2.0.6
-    - xorg-libxau 1.0.12
-    - xorg-libxdmcp 1.1.5
-    - xorg-xorgproto 2024.1
+    - xorg-libxfont2 2.0.9
+    - xorg-libxau {{ xorg_libxau }}
+    - xorg-libxdmcp {{ xorg_libxdmcp }}
+    - xorg-xorgproto {{ xorg_xorgproto }}
     - xorg-xtrans 1.6.0
-    - xkeyboard-config 2.44
+    - xkeyboard-config 2.48
     - openssl {{ openssl }}
-    - pixman 0.46.4
-    - libxkbfile 1.1.0
+    - pixman {{ pixman }}
+    - libxkbfile {{ libxkbfile }}
   run:
     - xorg-libxfont2
     - xkeyboard-config
