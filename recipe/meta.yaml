@@ -43,7 +43,7 @@ test:
 
 about:
   home: https://www.x.org/
-  summary: Virtual framebuffer X server
+  summary: Virtual framebuffer X server.
   description: |
     Xvfb is an X server that can run on machines with no display hardware and no
     physical input devices. It emulates a dumb framebuffer using virtual memory.
