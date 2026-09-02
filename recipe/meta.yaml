@@ -58,7 +58,11 @@ about:
   description: |
     Xvfb is an X server that can run on machines with no display hardware and no
     physical input devices. It emulates a dumb framebuffer using virtual memory.
-  license: MIT
+  license: |
+    MIT AND MIT-open-group AND LicenseRef-MIT-Khronos-credit AND X11 
+    AND X11-no-permit-persons AND Adobe-Display-PostScript AND BSD-2-Clause 
+    AND HPND AND HPND-Netrek AND HPND-sell-variant AND HPND-sell-MIT-disclaimer-xserver 
+    AND ICU AND ISC AND NTP AND SGI-B-2.0 AND SMLNJ
   license_family: MIT
   license_file: COPYING
   dev_url: https://gitlab.freedesktop.org/xorg/xserver
