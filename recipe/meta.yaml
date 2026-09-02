@@ -42,7 +42,7 @@ test:
     - export XKB_DEFAULT_RULES=base  # [osx]
     - export XKB_DEFAULT_MODEL=pc105  # [osx]
     - export XKB_DEFAULT_LAYOUT=us  # [osx]
-    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins & XVFB_PID=$! && sleep 2 && kill $XVFB_PID  # [not osx]
+    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins & XVFB_PID=$! && sleep 2 && kill $XVFB_PID
 about:
   home: https://www.x.org/
   summary: Virtual framebuffer X server.
