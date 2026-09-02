@@ -38,10 +38,9 @@ requirements:
 
 test:
   commands:
-    - conda list | grep -i "xorgproto\|xkbcomp\|libx11\|libxkbcommon\|xkeyboard-config"
     - Xvfb -help
-    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins & XVFB_PID=$! && sleep 2 && kill $XVFB_PID
-
+    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins & XVFB_PID=$! && sleep 2 && kill $XVFB_PID  # [not osx]
+    - Xvfb :99 -screen 0 800x600x24 -nolisten tcp -noreset -fp built-ins -xkbrules base -xkbmodel pc105 -xkblayout us & XVFB_PID=$! && sleep 2 && kill $XVFB_PID  #[osx]
 about:
   home: https://www.x.org/
   summary: Virtual framebuffer X server.
